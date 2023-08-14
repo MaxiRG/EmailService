@@ -22,6 +22,3 @@ model User {
   lastName String?
 }
 
-model Bookmark{
-  id Int @id @default(autoincrement())
-}
