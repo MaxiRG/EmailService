@@ -20,5 +20,15 @@ model User {
 
   firstName String?
   lastName String?
+
+  emails Email[]
+  @@map("users")
+}
+
+model Email {
+  id Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  userId Int
+  user User @relation(fields: [userId], references: [id])
 }
 
