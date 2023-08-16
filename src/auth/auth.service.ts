@@ -5,7 +5,6 @@ import { PrismaService } from "../prisma/prisma.service";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import { JwtService } from "@nestjs/jwt";
 import { ConfigService } from "@nestjs/config";
-import { config } from "rxjs";
 
 @Injectable()
 export class AuthService {
