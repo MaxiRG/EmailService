@@ -11,12 +11,9 @@ export class EmailService {
   ) {}
   async sendEmail(dto: EmailDto, userId: number) {
     this.sendGridProvider(dto);
-    const user = await this.prisma.user.findUnique({
-      where: { id: userId },
-    });
     const email = await this.prisma.email.create({
       data: {
-        userId: user.id,
+        userId: userId,
       },
     });
     return email;
